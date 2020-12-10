@@ -59,6 +59,7 @@
     <center>
       <input type="submit" class="btn btn-info btn" name="" value="simpan">
       <a href="siswa_password.php?id_siswa=<?php echo $id_siswa ?>" class='btn btn-danger'>Ganti Password </a>
+      <a href="siswa_password.php?id_siswa=<?php echo $id_siswa ?>" class='btn btn-warning'>Reset Password </a>
     </center>
     </form>
 

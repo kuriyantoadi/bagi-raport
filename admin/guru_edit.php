@@ -65,6 +65,7 @@
         <center>
             <input type="submit" class="btn btn-info btn" name="" value="simpan">
             <a href="guru_password.php?id_guru=<?php echo $id_guru ?>" class='btn btn-danger'>Ganti Password </a>
+            <a href="guru_reset.php?id_guru=<?php echo $id_guru ?>" class='btn btn-warning'>Reset Password </a>
         </center>
         </form>
 
