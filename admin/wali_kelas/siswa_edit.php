@@ -13,7 +13,7 @@
   </div>
 
   <?php
-  include('../koneksi.php');
+  include('../../koneksi.php');
   $id_siswa = $_GET['id_siswa'];
   $data = mysqli_query($koneksi, "SELECT * FROM tb_siswa, tb_kelas WHERE tb_siswa.id_siswa='$id_siswa' AND tb_siswa.kode_kelas=tb_kelas.kode_kelas ");
 

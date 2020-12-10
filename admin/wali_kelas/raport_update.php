@@ -1,10 +1,11 @@
 <?php
 session_start();
-if ($_SESSION['status']!="wali") {
-    header("location:../../login/rpl/index.php?pesan=belum_login");
+if ($_SESSION['status']!="admin") {
+    header("location:../login/.php?pesan=belum_login");
 }
 
 include '../../koneksi.php';
+$id_siswa = $_POST['id_siswa'];
 $nisn = $_POST['nisn'];
 $kode_kelas = $_POST['kode_kelas'];
 
@@ -20,7 +21,7 @@ if ($_POST['upload']) {
     $file_tmp = $_FILES['pdf_raport']['tmp_name'];
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
         if ($ukuran < 544070) {
-            move_uploaded_file($file_tmp, '../../raport/kelas-xi/'.$kode_kelas.'-'.$nisn.'.pdf');
+            move_uploaded_file($file_tmp, '../../raport/'.$kode_kelas.'-'.$nisn.'.pdf');
         } else {
             echo 'pdf_raport';
             echo 'UKURAN FILE TERLALU BESAR';
@@ -37,11 +38,11 @@ if ($_POST['upload']) {
 
 // UPDATE `upload` SET `id_file`=[value-1],`nama_file`=[value-2] WHERE 1
 
-mysqli_query($koneksi, "UPDATE login SET
+mysqli_query($koneksi, "UPDATE tb_siswa SET
              nama_raport='$kode_kelas-$nisn.pdf'
              where nisn='$nisn'
              ");
 
 
 // node_id=<?php echo $d['node_id'];
- header("location:index.php?id=$kode_kelas");
+ header("location:raport_lihat.php?id_siswa=$id_siswa");

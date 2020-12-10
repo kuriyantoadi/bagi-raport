@@ -21,7 +21,7 @@
 
     <div class="row mb-3">
         <div class="col-sm">
-            <a href="kelas_tambah.php" type="button" class="btn btn-info btn-sm"> Tambah Guru</a>
+            <a href="guru_tambah.php" type="button" class="btn btn-info btn-sm"> Tambah Guru</a>
         </div>
         <div class="col-sm">
         </div>
@@ -82,11 +82,11 @@
                 </td>
                 <td>
                     <center>
-                        <a type="button" class="btn btn-info btn-sm" href="siswa.php?kode_kelas=<?php echo $d['kode_kelas'] ?>">Lihat Siswa</a>
+                        <a type="button" class="btn btn-primary btn-sm" href="siswa.php?kode_kelas=<?php echo $d['kode_kelas'] ?>">Lihat Siswa</a>
                 </td>
                 <td>
                     <center>
-                        <a type="button" class="btn btn-primary btn-sm" href="guru_edit.php?id_guru=<?php echo $d['id_guru'] ?>">Edit</a>
+                        <a type="button" class="btn btn-info btn-sm" href="guru_edit.php?id_guru=<?php echo $d['id_guru'] ?>">Edit</a>
                 </td>
                 <td>
                     <center>

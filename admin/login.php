@@ -45,7 +45,8 @@
                     }
                 }
                 ?>
-                <h5 style="margin-top:  40px; margin-bottom: 40px;">Admin Raport</h5>
+                <h5 style="margin-top:  40px; margin-bottom: 40px;">Program Bagi Raport SMKN 1 Kragilan<br>Login Guru</h5>
+                
       </div>
 
       <!-- Login Form -->

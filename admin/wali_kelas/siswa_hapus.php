@@ -1,6 +1,6 @@
 <?php
 // koneksi database
-include '../koneksi.php';
+include '../../koneksi.php';
 
 // menangkap data id yang di kirim dari url
 session_start();
@@ -14,5 +14,5 @@ if ($_SESSION['status'] != "wali" && $_SESSION['status'] != "admin") {
     mysqli_query($koneksi, "delete from tb_siswa where id_siswa='$id_siswa' ");
 
     // mengalihkan halaman kembali ke index.php
-    header("location:siswa_daftar.php?kode_kelas=$kode_kelas");
+    header("location:index.php");
 }

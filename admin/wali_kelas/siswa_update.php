@@ -4,7 +4,7 @@ if ($_SESSION['status'] != "wali" && $_SESSION['status'] != "admin") {
     header("location:login.php?pesan=belum_login");
 }
 
-include '../koneksi.php';
+include '../../koneksi.php';
 
 $id_siswa = $_POST['id_siswa'];
 $nisn = $_POST['nisn'];
@@ -20,4 +20,4 @@ mysqli_query($koneksi, "UPDATE tb_siswa SET
              ");
 
 // node_id=<?php echo $d['node_id'];
-header("location:siswa_edit.php?id_siswa=$id_siswa");
+header("location:index.php");

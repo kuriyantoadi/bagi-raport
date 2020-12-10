@@ -37,7 +37,7 @@ if ($cek > 0) {
     } elseif ($login['status']=="wali") {
        $_SESSION['username'] = $username;
        $_SESSION['status'] = "wali";
-       header("location:wali-kelas/index.php");
+       header("location:wali_kelas/index.php");
     } else {
         // echo "salah1";
         header("location:index.php?pesan=gagal1");

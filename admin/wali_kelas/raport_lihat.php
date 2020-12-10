@@ -12,7 +12,7 @@
   </div>
 
   <?php
-  include('../koneksi.php');
+  include('../../koneksi.php');
   $id_siswa = $_GET['id_siswa'];
   $data = mysqli_query($koneksi, "select * from tb_siswa where id_siswa='$id_siswa' ");
   while ($d = mysqli_fetch_array($data)) {
@@ -55,7 +55,7 @@
               echo "Maaf, Raport Belum Di input";
             ?>
             <?php } else { ?>
-              <embed src="../raport/<?php echo $d['nama_raport']; ?>" type="application/pdf" width="100%" height="500px">
+              <embed src="../../raport/<?php echo $d['nama_raport']; ?>" type="application/pdf" width="100%" height="500px">
             <?php } ?>
           </td>
         </tr>

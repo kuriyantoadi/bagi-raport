@@ -5,7 +5,7 @@ if ($_SESSION['status']!="admin") {
 }
 
 include '../koneksi.php';
-$id = $_POST['id'];
+$id_siswa = $_POST['id_siswa'];
 $nisn = $_POST['nisn'];
 $kode_kelas = $_POST['kode_kelas'];
 
@@ -45,4 +45,4 @@ mysqli_query($koneksi, "UPDATE tb_siswa SET
 
 
 // node_id=<?php echo $d['node_id'];
- header("location:raport_lihat.php?id=$id");
+ header("location:raport_lihat.php?id_siswa=$id_siswa");

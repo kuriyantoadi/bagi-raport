@@ -61,7 +61,7 @@
             </tr>
         </thead>
         <?php
-        include '../koneksi.php';
+        include '../../koneksi.php';
         $halperpage = 200;
         $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
         $mulai = ($page > 1) ? ($page * $halperpage) - $halperpage : 0;

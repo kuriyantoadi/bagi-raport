@@ -41,7 +41,7 @@
                 <tr>
                     <td>Password</td>
                     <td>
-                        <input type="text" class="form-control" name="password" value="<?php echo $d['password'] ?>" required>
+                        <input type="text" class="form-control" name="password" value="<?php echo $d['password'] ?>" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -62,7 +62,10 @@
 
 
         <?php } ?>
-        <center><input type="submit" class="btn btn-info btn" name="" value="simpan"></center>
+        <center>
+            <input type="submit" class="btn btn-info btn" name="" value="simpan">
+            <a href="guru_password.php?id_guru=<?php echo $id_guru ?>" class='btn btn-danger'>Ganti Password </a>
+        </center>
         </form>
 
 </div>
