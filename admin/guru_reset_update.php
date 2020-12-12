@@ -2,17 +2,16 @@
 
 require_once "../koneksi.php";
 
-// $passwordlama = md5($_POST['passwordlama']);
+$id_guru = $_POST['id_guru'];
 $passwordbaru = md5($_POST['passwordbaru']);
 $konfirmasipassword = md5($_POST['konfirmasipassword']);
 $username = $_POST['username'];
 
-// echo $passwordlama;
-// echo $passwordbaru;
-// echo $konfirmasipassword;
 
     $updatequery = mysqli_query($koneksi, "update tb_guru set password='$passwordbaru' where username = '$username'");
 
     if ($updatequery) {
-        echo "Password telah diganti menjadi $passwordbaru";
+        header("location:guru_reset.php?pesan=ganti-berhasil&id_guru=$id_guru");
+    }else{
+        header("location:guru_reset.php?pesan=ganti-gagal&id_guru=$id_guru");
     }

@@ -13,6 +13,20 @@
     </div>
 
     <?php
+
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "reset-berhasil") {
+            echo "
+              <div class='alert alert-info ' role='alert'>
+                <center>Ganti Password Siswa <b> Berhasil </b></div>";
+        } elseif ($_GET['pesan'] == "reset-gagal") {
+            echo "
+              <div class='alert alert-danger' role='alert'>
+                <center>Ganti Password Siswa <b> Gagal </b>
+              </div>";
+        }
+    }
+
     include('../../koneksi.php');
     $id_siswa = $_GET['id_siswa'];
     $data = mysqli_query($koneksi, "SELECT * FROM tb_siswa, tb_kelas WHERE id_siswa='$id_siswa' AND tb_siswa.kode_kelas=tb_kelas.kode_kelas ");

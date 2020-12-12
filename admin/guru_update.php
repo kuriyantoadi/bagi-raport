@@ -13,7 +13,7 @@ $password = $_POST['password'];
 $kode_kelas = $_POST['kode_kelas'];
 
 
-mysqli_query($koneksi, "UPDATE tb_guru SET
+$cek_edit = mysqli_query($koneksi, "UPDATE tb_guru SET
              nama_guru='$nama_guru',
              username='$username',
              password='$password',
@@ -21,5 +21,8 @@ mysqli_query($koneksi, "UPDATE tb_guru SET
              where id_guru='$id_guru'
              ");
 
-// node_id=<?php echo $d['node_id'];
-// header("location:siswa_edit.php?id=$id");
+if ($cek_edit) {
+    header("location:guru.php?pesan=berhasil");
+} else {
+    header("location:guru.php?pesan=gagal");
+}

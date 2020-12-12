@@ -9,8 +9,13 @@ if ($_SESSION['status']!="admin") {
 } 
     $id_guru = $_GET['id_guru'];
     // menghapus data dari database
-    mysqli_query($koneksi, "delete from tb_guru where id_guru='$id_guru' ");
+    $cek_hapus = mysqli_query($koneksi, "delete from tb_guru where id_guru='$id_guru' ");
 
     // mengalihkan halaman kembali ke index.php
-    header("location:guru.php");
+    if($cek_hapus) {
+      header("location:guru.php?pesan=hapus-berhasil");
+    }else{
+        header("location:guru.php?pesan=hapus-gagal");
+    }
+
 

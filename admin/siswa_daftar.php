@@ -2,24 +2,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-4">
             <center>
-                <h3 style="margin-top:  25px;"><b>Halaman Program Raport Wali Kelas</b></h3>
+                <h2 style="margin-top:  25px;"><b>Daftar Siswa</b></h2>
             </center>
-            <center>
-                <h4><b>SMKN 1 KRAGILAN</b></h4>
-            </center>
-            <center>
-                <h5><b>TAHUN PELAJARAN 2020/2021</b></h5>
-            </center>
-            <br>
-            <!-- font ganti jenis -->
         </div>
-
     </div>
 
 
-    <div class="row mb-3" >
+    <div class="row mb-3">
         <div class="col-sm">
             <a href="siswa_tambah.php" type="button" class="btn btn-info btn-sm"> Tambah Siswa</a>
         </div>
@@ -30,6 +21,33 @@
         </div>
     </div>
 
+
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "tambah-berhasil") {
+            echo "
+						<div class='alert alert-info alert-dismissible fade show' role='alert'>
+                            <center>Data Siswa Berhasil Ditambah
+                        </div>";
+        } elseif ($_GET['pesan'] == "tambah-gagal") {
+            echo "
+						<div class='alert alert-warning' role='alert'>
+							<center>Maaf, Data Siswa Tidak Berhasil Diubah
+						</div>
+						";
+        } elseif ($_GET['pesan'] == "hapus-berhasil") {
+            echo "
+						<div class='alert alert-info' role='alert'>
+							<center>Hapus Data Siswa Berhasil
+						</div>";
+        } elseif ($_GET['pesan'] == "hapus-gagal") {
+            echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Maaf anda harus login dulu
+						</div>";
+        }
+    }
+    ?>
 
     <table class="table table-bordered table-hover" id="domainsTable">
         <thead>
@@ -71,7 +89,6 @@
 
         $data = mysqli_query($koneksi, "SELECT *
         from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas LIMIT $mulai, $halperpage  ");
-        // SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas LIMIT 0, 10 
         $no = $mulai + 1;
 
         while ($d = mysqli_fetch_array($data)) {

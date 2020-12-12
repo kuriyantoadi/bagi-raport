@@ -2,18 +2,10 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-4">
             <center>
-                <h3 style="margin-top:  25px;"><b>Halaman Program Raport Wali Kelas</b></h3>
+                <h2 style="margin-top:  25px;"><b>Daftar Guru</b></h2>
             </center>
-            <center>
-                <h4><b>SMKN 1 KRAGILAN</b></h4>
-            </center>
-            <center>
-                <h5><b>TAHUN PELAJARAN 2020/2021</b></h5>
-            </center>
-            <br>
-            <!-- font ganti jenis -->
         </div>
 
     </div>
@@ -31,7 +23,32 @@
     </div>
 
 
-
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "tambah-berhasil") {
+            echo "
+						<div class='alert alert-info ' role='alert'>
+							<center>Data Guru Berhasil Ditambah</div>";
+        } elseif ($_GET['pesan'] == "tambah-gagal") {
+            echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Data Guru Gagal Ditambah
+						</div>
+                        ";
+        } elseif ($_GET['pesan'] == "hapus-berhasil") {
+            echo "
+						<div class='alert alert-info' role='alert'>
+							<center>Data Berhasil Dihapus
+						</div>
+						";
+        } elseif ($_GET['pesan'] == "hapus-gagal") {
+            echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Maaf, Proses Hapus Gagal
+						</div>";
+        }
+    }
+    ?>
 
     <table class="table table-bordered table-hover" id="domainsTable">
         <thead>

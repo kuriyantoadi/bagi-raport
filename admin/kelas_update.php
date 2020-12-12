@@ -16,12 +16,17 @@ $tingkat = $_POST['tingkat'];
 
 // UPDATE `upload` SET `id_file`=[value-1],`nama_file`=[value-2] WHERE 1
 
-mysqli_query($koneksi, "UPDATE tb_kelas SET
+$cek_edit = mysqli_query($koneksi, "UPDATE tb_kelas SET
              nama_kelas='$nama_kelas',
              kode_kelas='$kode_kelas',
              tingkat='$tingkat'
              where id_kelas='$id_kelas'
              ");
 
-// node_id=<?php echo $d['node_id'];
- header("location:kelas.php?tingkat=$tingkat");
+if ($cek_edit) {
+    header("location:kelas.php?pesan=edit-berhasil");
+} else {
+    header("location:kelas.php?pesan=edit-gagal");
+}
+
+

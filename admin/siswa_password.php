@@ -12,6 +12,29 @@
 
     </div>
 
+
+    <?php
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "berhasil") {
+            echo "
+						<div class='alert alert-info alert-dismissible fade show' role='alert'>
+                            <center>Password Berhasil Diganti
+                        </div>";
+        } elseif ($_GET['pesan'] == "gagal") {
+            echo "
+						<div class='alert alert-warning' role='alert'>
+							<center>Maaf, Password Gagal diganti
+						</div>
+						";
+        } elseif ($_GET['pesan'] == "belum_login") {
+            echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Maaf anda harus login dulu
+						</div>";
+        }
+    }
+    ?>
+
     <?php
     include('../koneksi.php');
     $id_siswa = $_GET['id_siswa'];
@@ -42,12 +65,6 @@
                     <td>Kelas</td>
                     <td>
                         <input type="text" class="form-control" name="kode_kelas" value="<?php echo $d['nama_kelas'] ?>" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Password Lama</td>
-                    <td>
-                        <input type="text" class="form-control" name="passwordlama" value="" required>
                     </td>
                 </tr>
                 <tr>

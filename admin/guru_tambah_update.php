@@ -11,8 +11,12 @@ $password = md5($_POST['password']);
 $nama_guru = $_POST['nama_guru'];
 $kode_kelas = $_POST['kode_kelas'];
 
-mysqli_query($koneksi, "INSERT INTO tb_guru Values('','$username','$password','$nama_guru','$kode_kelas','wali')");
+$cek_tambah = mysqli_query($koneksi, "INSERT INTO tb_guru Values('','$username','$password','$nama_guru','$kode_kelas','wali')");
+
+if ($cek_tambah) {
+    header("location:guru.php?pesan=tambah-berhasil");
+} else {
+    header("location:guru.php?pesan=tambah-gagal");
+}
 
 
-// node_id=<?php echo $d['node_id'];
-header("location:guru.php");

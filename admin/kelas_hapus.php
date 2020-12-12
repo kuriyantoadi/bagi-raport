@@ -9,8 +9,13 @@ if ($_SESSION['status']!="admin") {
 } else {
     $id_kelas = $_GET['id_kelas'];
     // menghapus data dari database
-    mysqli_query($koneksi, "delete from tb_kelas where id_kelas='$id_kelas' ");
+    $cek_hapus = mysqli_query($koneksi, "delete from tb_kelas where id_kelas='$id_kelas' ");
 
     // mengalihkan halaman kembali ke index.php
-    header("location:kelas.php");
+    if ($cek_hapus) {
+        header("location:kelas.php?pesan=hapus-berhasil");
+    } else {
+        header("location:kelas.php?pesan=hapus-gagal");
+    }
+    
 }

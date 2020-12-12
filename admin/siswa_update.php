@@ -12,12 +12,17 @@ $nama_siswa = $_POST['nama_siswa'];
 $kode_kelas = $_POST['kode_kelas'];
 
 
-mysqli_query($koneksi, "UPDATE tb_siswa SET
+ $cek_update = mysqli_query($koneksi, "UPDATE tb_siswa SET
              nisn='$nisn',
              nama_siswa='$nama_siswa',
              kode_kelas='$kode_kelas'
              where id_siswa='$id_siswa'
              ");
 
-// node_id=<?php echo $d['node_id'];
-header("location:siswa_edit.php?id_siswa=$id_siswa");
+if ($cek_update) {
+    header("location:siswa_edit.php?pesan=berhasil&id_siswa=$id_siswa");
+} else {
+    header("location:siswa_edit.php?pesan=gagal&id_siswa=$id_siswa");
+}
+
+

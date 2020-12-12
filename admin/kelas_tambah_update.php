@@ -12,8 +12,12 @@ $tingkat = $_POST['tingkat'];
 
 
 
-mysqli_query($koneksi, "INSERT INTO tb_kelas Values('','$kode_kelas','$nama_kelas','$tingkat')");
+$cek_tambah =  mysqli_query($koneksi, "INSERT INTO tb_kelas Values('','$kode_kelas','$nama_kelas','$tingkat')");
+
+if ($cek_tambah) {
+    header("location:kelas.php?pesan=tambah-berhasil");
+} else {
+    header("location:kelas.php?pesan=tambah-gagal");
+}
 
 
-// node_id=<?php echo $d['node_id'];
-header("location:kelas.php");

@@ -13,6 +13,22 @@
     </div>
 
     <?php
+
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "berhasil") {
+            echo "
+						<div class='alert alert-info alert-dismissible fade show' role='alert'>
+                            <center>Edit Data Guru <b>Berhasil</b>
+                        </div>";
+        } elseif ($_GET['pesan'] == "gagal") {
+            echo "
+						<div class='alert alert-warning' role='alert'>
+							<center>Maaf, Edit Data Guru <b>Gagal</b>
+						</div>
+                        ";
+        }
+    }
+
     include('../koneksi.php');
     $id_guru = $_GET['id_guru'];
     $data = mysqli_query($koneksi, "SELECT * FROM tb_guru, tb_kelas WHERE id_guru='$id_guru' AND tb_guru.kode_kelas=tb_kelas.kode_kelas ");
@@ -64,8 +80,7 @@
         <?php } ?>
         <center>
             <input type="submit" class="btn btn-info btn" name="" value="simpan">
-            <a href="guru_password.php?id_guru=<?php echo $id_guru ?>" class='btn btn-danger'>Ganti Password </a>
-            <a href="guru_reset.php?id_guru=<?php echo $id_guru ?>" class='btn btn-warning'>Reset Password </a>
+            <a href="guru_reset.php?id_guru=<?php echo $id_guru ?>" class='btn btn-danger'>Ganti Password </a>
         </center>
         </form>
 

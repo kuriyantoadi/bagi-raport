@@ -13,6 +13,22 @@
     </div>
 
     <?php
+
+    if (isset($_GET['pesan'])) {
+        if ($_GET['pesan'] == "ganti-berhasil") {
+            echo "
+						<div class='alert alert-info ' role='alert'>
+							<center>Ganti Password Guru <b>Berhasil</b></div>";
+        } elseif ($_GET['pesan'] == "ganti-gagal") {
+            echo "
+						<div class='alert alert-danger' role='alert'>
+							<center>Ganti Password Guru <b>Gagal</b>
+						</div>
+                        ";
+        }
+    }
+
+
     include('../koneksi.php');
     $id_guru = $_GET['id_guru'];
     $data = mysqli_query($koneksi, "SELECT * FROM tb_guru, tb_kelas WHERE id_guru='$id_guru' AND tb_guru.kode_kelas=tb_kelas.kode_kelas ");
