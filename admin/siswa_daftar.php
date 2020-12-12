@@ -102,7 +102,7 @@
                 </td>
                 <td>
                     <center>
-                        <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswwa=<?php echo $d['id_siswa']; ?>&kode_kelas=<?php echo $d['kode_kelas'] ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
+                        <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
                 </td>
             </tr>
 
