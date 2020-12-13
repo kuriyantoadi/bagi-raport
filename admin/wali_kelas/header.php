@@ -1,4 +1,5 @@
 <?php
+@ob_start();
 session_start();
 if ($_SESSION['status'] != "wali") {
     header("location:../login.php?pesan=belum_login");
