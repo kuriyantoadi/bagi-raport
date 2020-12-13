@@ -19,6 +19,8 @@
 
   ?>
 
+    <a href='../../raport/<?php echo $d['nama_raport']; ?>' class='btn mb-4 btn-info btn-sm'>Download Raport</a>
+
     <form class="" action="raport_update.php" method="post" enctype="multipart/form-data">
 
       <table class="table table-bordered">
