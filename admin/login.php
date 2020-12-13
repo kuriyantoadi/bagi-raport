@@ -13,7 +13,8 @@
   <!-- <script src="js/bootstrap.min.js"></script> -->
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   <script src="../js/jquery-latest.js"></script>
-  <script src="" charset="utf-8"></script>
+  <link href='#' rel='shortcut icon' type='image/x-icon' />
+  <script charset="utf-8"></script>
   <link rel="stylesheet" href="../css/login.css">
   <!-- Include the above in your HEAD tag ---------->
 
@@ -24,29 +25,29 @@
       <!-- Icon -->
       <div class="fadeIn first">
         <?php
-                if (isset($_GET['pesan'])) {
-                    if ($_GET['pesan'] == "gagal") {
-                        echo "
+        if (isset($_GET['pesan'])) {
+          if ($_GET['pesan'] == "gagal") {
+            echo "
 						<div class='alert alert-danger' role='alert'>
 							<center>Maaf NISN anda salah!
               <br>Jika NISN anda tidak bisa hubungi Wali Kelas
 						</div>";
-                    } elseif ($_GET['pesan'] == "logout") {
-                        echo "
+          } elseif ($_GET['pesan'] == "logout") {
+            echo "
 						<div class='alert alert-warning' role='alert'>
 							<center>Anda Berhasil Logout
 						</div>
 						";
-                    } elseif ($_GET['pesan'] == "belum_login") {
-                        echo "
+          } elseif ($_GET['pesan'] == "belum_login") {
+            echo "
 						<div class='alert alert-danger' role='alert'>
 							<center>Maaf anda harus login dulu
 						</div>";
-                    }
-                }
-                ?>
-                <h5 style="margin-top:  40px; margin-bottom: 40px;">Program Bagi Raport SMKN 1 Kragilan<br>Login Guru</h5>
-                
+          }
+        }
+        ?>
+        <h5 style="margin-top:  40px; margin-bottom: 40px;">Program Bagi Raport SMKN 1 Kragilan<br>Login Guru</h5>
+
       </div>
 
       <!-- Login Form -->
@@ -54,7 +55,7 @@
       <form method="post" action="cek_login.php">
         <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
         <input type="text" id="login" class="fadeIn second" name="password" placeholder="Password">
-        <input type="submit" class="fadeIn fourth" >
+        <input type="submit" class="fadeIn fourth">
       </form>
 
       <!-- Remind Passowrd -->
