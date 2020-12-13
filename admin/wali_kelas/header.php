@@ -1,9 +1,14 @@
 <?php
-@ob_start();
+ob_start();
 session_start();
 if ($_SESSION['status'] != "wali") {
     header("location:../login.php?pesan=belum_login");
 } 
+
+?>
+
+<?php 
+
 $username = $_SESSION['username'];
 include('../../koneksi.php');
 $data = mysqli_query($koneksi, "select * from tb_guru where username='$username' ");
@@ -11,6 +16,7 @@ while ($d = mysqli_fetch_array($data)) {
     $kode_kelas = $d['kode_kelas'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
