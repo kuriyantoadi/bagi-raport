@@ -6,6 +6,8 @@ if ($_SESSION['status'] != "wali") {
 
 $username = $_SESSION['username'];
 
+echo $username;
+
 include('../../koneksi.php');
 $data = mysqli_query($koneksi, "select * from tb_guru where username='$username' ");
 while ($d = mysqli_fetch_array($data)) {
