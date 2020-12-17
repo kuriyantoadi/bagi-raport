@@ -20,7 +20,7 @@ if ($_POST['upload']) {
     $ukuran    = $_FILES['pdf_raport']['size'];
     $file_tmp = $_FILES['pdf_raport']['tmp_name'];
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
-        if ($ukuran < 544070) {
+        if ($ukuran < 1500000) {
             move_uploaded_file($file_tmp, '../../raport/'.$kode_kelas.'-'.$nisn.'.pdf');
         } else {
             echo 'pdf_raport';
