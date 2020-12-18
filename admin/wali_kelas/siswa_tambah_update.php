@@ -17,4 +17,4 @@ mysqli_query($koneksi, "INSERT INTO tb_siswa Values('','$nisn','$password','$nam
 
 
 // node_id=<?php echo $d['node_id'];
-header("location:siswa_daftar.php");
+header("location:siswa_daftar.php?kode_kelas=$kode_kelas");

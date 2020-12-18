@@ -62,7 +62,8 @@
     include '../koneksi.php';
     $no = 1;
     $kode_kelas = $_GET['kode_kelas'];
-    $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas='$kode_kelas' AND tb_siswa.kode_kelas=tb_kelas.kode_kelas");
+    $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas='$kode_kelas' 
+    AND tb_siswa.kode_kelas=tb_kelas.kode_kelas ORDER BY tb_siswa.nama_siswa ASC");
     while ($d = mysqli_fetch_array($data)) {
     ?>
       <tr>
