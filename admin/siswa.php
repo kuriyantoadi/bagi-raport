@@ -61,9 +61,9 @@
     <?php
     include '../koneksi.php';
     $no = 1;
-    $kode_kelas = $_GET['kode_kelas'];
-    $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas='$kode_kelas' 
-    AND tb_siswa.kode_kelas=tb_kelas.kode_kelas ORDER BY tb_siswa.nama_siswa ASC");
+    $id_kelas = $_GET['id_kelas'];
+    $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.id_kelas='$id_kelas' 
+    AND tb_siswa.id_kelas=tb_kelas.id_kelas ORDER BY tb_siswa.nama_siswa ASC");
     while ($d = mysqli_fetch_array($data)) {
     ?>
       <tr>
@@ -92,7 +92,7 @@
         </td>
         <td>
           <center>
-            <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>&kode_kelas=<?php echo $d['kode_kelas'] ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
+            <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>&id_kelas=<?php echo $d['id_kelas'] ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
         </td>
       </tr>
 

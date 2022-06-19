@@ -21,7 +21,7 @@
         <table class="table table-bordered">
             <tr>
                 <td>
-                    Username Guru 
+                    Username Guru
                 </td>
                 <td>
                     <input type="text" class="form-control" name="username" value="" required>
@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td>
-                    Password 
+                    Password
                 </td>
                 <td>
                     <input type="text" class="form-control" name="password" value="" required>
@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <td>
-                    Nama Guru 
+                    Nama Guru
                 </td>
                 <td>
                     <input type="text" class="form-control" name="nama_guru" value="" required>
@@ -45,16 +45,16 @@
             </tr>
             <tr>
                 <td>
-                    Wali Kelas 
+                    Wali Kelas
                 </td>
                 <td>
-                    <select class="form-control" name="kode_kelas" required>
+                    <select class="form-control" name="id_kelas" required>
                         <option value=""> Pilih Kelas</option>
                         <?php
                         $data = mysqli_query($koneksi, "select * from tb_kelas");
                         while ($d1 = mysqli_fetch_array($data)) {
                         ?>
-                            <option value="<?php echo $d1['kode_kelas'] ?>"><?php echo $d1['nama_kelas'] ?></option>
+                            <option value="<?php echo $d1['id_kelas'] ?>"><?php echo $d1['nama_kelas'] ?></option>
                         <?php } ?>
                     </select>
                 </td>

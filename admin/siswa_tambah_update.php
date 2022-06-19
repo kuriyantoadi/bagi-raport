@@ -8,17 +8,15 @@ include '../koneksi.php';
 
 $nisn = $_POST['nisn'];
 $nama_siswa = $_POST['nama_siswa'];
-$kode_kelas = $_POST['kode_kelas'];
+$id_kelas = $_POST['id_kelas'];
 $password = md5($_POST['password']);
 
 
 
-$cek_tambah = mysqli_query($koneksi, "INSERT INTO tb_siswa Values('','$nisn','$password','$nama_siswa','$kode_kelas','','AKTIF')");
+$cek_tambah = mysqli_query($koneksi, "INSERT INTO tb_siswa Values('','$id_kelas','$nisn','$password','$nama_siswa','','AKTIF')");
 
 if ($cek_tambah) {
-    header("location:siswa_daftar.php?pesan=tambah-berhasil");
+    // header("location:siswa_daftar.php?pesan=tambah-berhasil");
 } else {
-    header("location:siswa_daftar.php?pesan=tambah-gagal");
+    // header("location:siswa_daftar.php?pesan=tambah-gagal");
 }
-
-

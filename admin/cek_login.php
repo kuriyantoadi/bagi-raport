@@ -10,7 +10,7 @@ include '../koneksi.php';
 // echo "salah php inlucde";
 
 // menangkap data yang dikirim dari form
-// belum mengunakan MD5
+// belum mengunakan md5
 $username = addslashes(trim($_POST['username']));
 // $nisn = $_POST['nisn'];
 $password = md5($_POST['password']);

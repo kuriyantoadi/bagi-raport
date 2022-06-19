@@ -10,14 +10,14 @@ $id_guru = $_POST['id_guru'];
 $nama_guru = $_POST['nama_guru'];
 $username = $_POST['username'];
 $password = $_POST['password'];
-$kode_kelas = $_POST['kode_kelas'];
+$id_kelas = $_POST['id_kelas'];
 
 
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_guru SET
              nama_guru='$nama_guru',
              username='$username',
              password='$password',
-             kode_kelas='$kode_kelas'
+             id_kelas='$id_kelas'
              where id_guru='$id_guru'
              ");
 

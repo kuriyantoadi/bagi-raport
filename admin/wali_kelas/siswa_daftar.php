@@ -63,18 +63,18 @@
         <?php
         include '../../koneksi.php';
 
-        $kode_kelas = $_GET['kode_kelas'];
+        $id_kelas = $_GET['id_kelas'];
 
         $halperpage = 200;
         $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
         $mulai = ($page > 1) ? ($page * $halperpage) - $halperpage : 0;
-        $result = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas ORDER BY tb_siswa.nama_siswa ASC");
+        $result = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.id_kelas=tb_kelas.id_kelas ORDER BY tb_siswa.nama_siswa ASC");
         $total = mysqli_num_rows($result);
         $pages = ceil($total / $halperpage);
 
         $data = mysqli_query($koneksi, "SELECT *
-        from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas LIMIT $mulai, $halperpage  ");
-        // SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas LIMIT 0, 10 
+        from tb_siswa, tb_kelas WHERE tb_siswa.id_kelas=tb_kelas.id_kelas LIMIT $mulai, $halperpage  ");
+        // SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.id_kelas=tb_kelas.id_kelas LIMIT 0, 10 
         $no = $mulai + 1;
 
         while ($d = mysqli_fetch_array($data)) {
@@ -105,7 +105,7 @@
                 </td>
                 <td>
                     <center>
-                        <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswwa=<?php echo $d['id_siswa']; ?>&kode_kelas=<?php echo $d['kode_kelas'] ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
+                        <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswwa=<?php echo $d['id_siswa']; ?>&id_kelas=<?php echo $d['id_kelas'] ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
                 </td>
             </tr>
 

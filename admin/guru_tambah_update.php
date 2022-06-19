@@ -9,9 +9,9 @@ include '../koneksi.php';
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 $nama_guru = $_POST['nama_guru'];
-$kode_kelas = $_POST['kode_kelas'];
+$id_kelas = $_POST['id_kelas'];
 
-$cek_tambah = mysqli_query($koneksi, "INSERT INTO tb_guru Values('','$username','$password','$nama_guru','$kode_kelas','wali')");
+$cek_tambah = mysqli_query($koneksi, "INSERT INTO tb_guru Values('','$username','$password','$nama_guru','$id_kelas','wali')");
 
 if ($cek_tambah) {
     header("location:guru.php?pesan=tambah-berhasil");

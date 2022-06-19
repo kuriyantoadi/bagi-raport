@@ -68,13 +68,7 @@
                     <center>Kondisi Raport
                 </th>
                 <th>
-                    <center>Lihat Raport
-                </th>
-                <th>
-                    <center>Edit
-                </th>
-                <th>
-                    <center>Hapus
+                  <center>Pilihan
                 </th>
             </tr>
         </thead>
@@ -83,12 +77,12 @@
         $halperpage = 200;
         $page = isset($_GET["halaman"]) ? (int)$_GET["halaman"] : 1;
         $mulai = ($page > 1) ? ($page * $halperpage) - $halperpage : 0;
-        $result = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas  ");
+        $result = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas WHERE tb_siswa.id_kelas=tb_kelas.id_kelas  ");
         $total = mysqli_num_rows($result);
         $pages = ceil($total / $halperpage);
 
         $data = mysqli_query($koneksi, "SELECT *
-        from tb_siswa, tb_kelas WHERE tb_siswa.kode_kelas=tb_kelas.kode_kelas LIMIT $mulai, $halperpage  ");
+        from tb_siswa, tb_kelas WHERE tb_siswa.id_kelas=tb_kelas.id_kelas LIMIT $mulai, $halperpage  ");
         $no = $mulai + 1;
 
         while ($d = mysqli_fetch_array($data)) {
@@ -111,15 +105,11 @@
                 </td>
                 <td>
                     <center>
-                        <a type="button" class="btn btn-primary btn-sm" href="raport_lihat.php?id_siswa=<?php echo $d['id_siswa'] ?>">View</a>
-                </td>
-                <td>
-                    <center>
+                      <a type="button" class="btn btn-danger btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>"
+                        onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
                         <a type="button" class="btn btn-info btn-sm" href="siswa_edit.php?id_siswa=<?php echo $d['id_siswa'] ?>">Edit</a>
-                </td>
-                <td>
-                    <center>
-                        <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
+                        <a type="button" class="btn btn-primary btn-sm" href="raport_lihat.php?id_siswa=<?php echo $d['id_siswa'] ?>">Lihat</a>
+
                 </td>
             </tr>
 

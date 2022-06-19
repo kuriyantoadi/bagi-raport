@@ -48,13 +48,13 @@
                     Kelas :
                 </td>
                 <td>
-                    <select class="form-control" name="kode_kelas" required>
+                    <select class="form-control" name="id_kelas" required>
                         <option value=""> Pilih Kelas</option>
                         <?php
                         $data = mysqli_query($koneksi, "select * from tb_kelas");
                         while ($d1 = mysqli_fetch_array($data)) {
                         ?>
-                            <option value="<?php echo $d1['kode_kelas'] ?>"><?php echo $d1['nama_kelas'] ?></option>
+                            <option value="<?php echo $d1['id_kelas'] ?>"><?php echo $d1['nama_kelas'] ?></option>
                         <?php } ?>
                     </select>
                 </td>

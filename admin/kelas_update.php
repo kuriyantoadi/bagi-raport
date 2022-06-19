@@ -9,7 +9,7 @@ include '../koneksi.php';
 
 $id_kelas = $_POST['id_kelas'];
 $nama_kelas = $_POST['nama_kelas'];
-$kode_kelas = $_POST['kode_kelas'];
+$id_kelas = $_POST['id_kelas'];
 $tingkat = $_POST['tingkat'];
 
 // echo $tingkat;
@@ -18,7 +18,7 @@ $tingkat = $_POST['tingkat'];
 
 $cek_edit = mysqli_query($koneksi, "UPDATE tb_kelas SET
              nama_kelas='$nama_kelas',
-             kode_kelas='$kode_kelas',
+             id_kelas='$id_kelas',
              tingkat='$tingkat'
              where id_kelas='$id_kelas'
              ");

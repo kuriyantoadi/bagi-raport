@@ -66,13 +66,7 @@
                     <center>Kelas
                 </th>
                 <th>
-                    <center>Lihat Siswa
-                </th>
-                <th>
-                    <center>Edit
-                </th>
-                <th>
-                    <center>Hapus
+                    <center>Pilihan
                 </th>
 
             </tr>
@@ -81,7 +75,7 @@
         include '../koneksi.php';
         // $tingkat = $_GET['tingkat'];
         $no = 1;
-        $data = mysqli_query($koneksi, "SELECT * from tb_guru, tb_kelas where tb_guru.kode_kelas=tb_kelas.kode_kelas");
+        $data = mysqli_query($koneksi, "SELECT * from tb_guru, tb_kelas where tb_guru.id_kelas=tb_kelas.id_kelas");
         while ($d = mysqli_fetch_array($data)) {
         ?>
             <tr>
@@ -99,15 +93,10 @@
                 </td>
                 <td>
                     <center>
-                        <a type="button" class="btn btn-primary btn-sm" href="siswa.php?kode_kelas=<?php echo $d['kode_kelas'] ?>">Lihat Siswa</a>
-                </td>
-                <td>
-                    <center>
-                        <a type="button" class="btn btn-info btn-sm" href="guru_edit.php?id_guru=<?php echo $d['id_guru'] ?>">Edit</a>
-                </td>
-                <td>
-                    <center>
-                        <a type="button" class="btn btn-warning btn-sm" href="guru_hapus.php?id_guru=<?php echo $d['id_guru']; ?>" onclick="return confirm('Anda yakin Hapus data kelas <?php echo $d['nama_guru']; ?> ?')">Hapus</a>
+                      <a type="button" class="btn btn-danger btn-sm" href="guru_hapus.php?id_guru=<?php echo $d['id_guru']; ?>"
+                          onclick="return confirm('Anda yakin Hapus data kelas <?php echo $d['nama_guru']; ?> ?')">Hapus</a>
+                      <a type="button" class="btn btn-info btn-sm" href="guru_edit.php?id_guru=<?php echo $d['id_guru'] ?>">Edit</a>
+                      <a type="button" class="btn btn-primary btn-sm" href="siswa.php?id_kelas=<?php echo $d['id_kelas'] ?>">Lihat Siswa</a>
                 </td>
             </tr>
 

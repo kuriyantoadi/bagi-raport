@@ -2,7 +2,7 @@
 
 require_once "../../koneksi.php";
 
-$kode_kelas = $_POST['kode_kelas'];
+$id_kelas = $_POST['id_kelas'];
 $passwordbaru = md5($_POST['passwordbaru']);
 $konfirmasipassword = md5($_POST['konfirmasipassword']);
 $nisn = $_POST['nisn'];

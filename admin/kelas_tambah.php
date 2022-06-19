@@ -24,7 +24,7 @@
                     Kode Kelas
                 </td>
                 <td>
-                    <input type="text" class="form-control" name="kode_kelas" value="" required>
+                    <input type="text" class="form-control" name="id_kelas" value="" required>
                 </td>
             </tr>
             <tr>

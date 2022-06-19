@@ -31,7 +31,7 @@
 
     include('../koneksi.php');
     $id_guru = $_GET['id_guru'];
-    $data = mysqli_query($koneksi, "SELECT * FROM tb_guru, tb_kelas WHERE id_guru='$id_guru' AND tb_guru.kode_kelas=tb_kelas.kode_kelas ");
+    $data = mysqli_query($koneksi, "SELECT * FROM tb_guru, tb_kelas WHERE id_guru='$id_guru' AND tb_guru.id_kelas=tb_kelas.id_kelas ");
 
     while ($d = mysqli_fetch_array($data)) {
 
@@ -57,7 +57,7 @@
                 <tr>
                     <td>Kelas</td>
                     <td>
-                        <input type="text" class="form-control" name="kode_kelas" value="<?php echo $d['nama_kelas'] ?>" readonly>
+                        <input type="text" class="form-control" name="id_kelas" value="<?php echo $d['nama_kelas'] ?>" readonly>
                     </td>
                 </tr>
                 <tr>

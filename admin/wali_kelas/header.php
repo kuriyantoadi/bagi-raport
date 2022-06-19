@@ -3,17 +3,17 @@ ob_start();
 session_start();
 if ($_SESSION['status'] != "wali") {
     header("location:../login.php?pesan=belum_login");
-} 
+}
 
 ?>
 
-<?php 
+<?php
 
 $username = $_SESSION['username'];
 include('../../koneksi.php');
 $data = mysqli_query($koneksi, "select * from tb_guru where username='$username' ");
 while ($d = mysqli_fetch_array($data)) {
-    $kode_kelas = $d['kode_kelas'];
+    $id_kelas = $d['id_kelas'];
 }
 ?>
 
@@ -36,7 +36,7 @@ while ($d = mysqli_fetch_array($data)) {
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.php">Program Raport ( <?php echo $kode_kelas  ?> )</a>
+        <a class="navbar-brand" href="index.php">Program Raport ( <?php echo $username  ?> )</a>
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
         </div>

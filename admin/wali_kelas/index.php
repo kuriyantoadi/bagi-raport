@@ -10,7 +10,7 @@
         <h4><b>SMKN 1 KRAGILAN</b></h4>
       </center>
       <center>
-        <h5><b>TAHUN PELAJARAN 2020/2021</b></h5>
+        <h5><b>TAHUN PELAJARAN 2021/2022</b></h5>
       </center>
       <br>
       <!-- font ganti jenis -->
@@ -47,13 +47,7 @@
           <center>Kondisi Raport
         </th>
         <th>
-          <center>View Raport
-        </th>
-        <th>
-          <center>Edit
-        </th>
-        <th>
-          <center>Hapus
+          <center>Pilihan
         </th>
 
       </tr>
@@ -61,7 +55,7 @@
     <?php
     include '../../koneksi.php';
     $no = 1;
-    $data = mysqli_query($koneksi, "SELECT * from tb_siswa,tb_kelas where tb_siswa.kode_kelas='$kode_kelas' AND tb_siswa.kode_kelas=tb_kelas.kode_kelas ORDER BY tb_siswa.nama_siswa ASC");
+    $data = mysqli_query($koneksi, "SELECT * from tb_siswa,tb_kelas where tb_siswa.id_kelas='$id_kelas' AND tb_siswa.id_kelas=tb_kelas.id_kelas ORDER BY tb_siswa.nama_siswa ASC");
     while ($d = mysqli_fetch_array($data)) {
     ?>
       <tr>
@@ -83,14 +77,8 @@
         <td>
           <center>
             <a type="button" class="btn btn-primary btn-sm" href="raport_lihat.php?id_siswa=<?php echo $d['id_siswa'] ?>">View</a>
-        </td>
-        <td>
-          <center>
-            <a type="button" class="btn btn-info btn-sm" href="siswa_edit.php?id_siswa=<?php echo $d['id_siswa'] ?>">Edit</a>
-        </td>
-        <td>
-          <center>
-            <a type="button" class="btn btn-warning btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
+            <a type="button" class="btn btn-warning btn-sm" href="siswa_edit.php?id_siswa=<?php echo $d['id_siswa'] ?>">Edit</a>
+            <a type="button" class="btn btn-danger btn-sm" href="siswa_hapus.php?id_siswa=<?php echo $d['id_siswa']; ?>" onclick="return confirm('Anda yakin Hapus data siswa <?php echo $d['nama_siswa']; ?> ?')">Hapus</a>
         </td>
       </tr>
 
@@ -133,4 +121,3 @@
 </body>
 
 </html>
-

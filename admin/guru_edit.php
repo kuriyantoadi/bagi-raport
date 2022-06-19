@@ -31,7 +31,7 @@
 
     include('../koneksi.php');
     $id_guru = $_GET['id_guru'];
-    $data = mysqli_query($koneksi, "SELECT * FROM tb_guru, tb_kelas WHERE id_guru='$id_guru' AND tb_guru.kode_kelas=tb_kelas.kode_kelas ");
+    $data = mysqli_query($koneksi, "SELECT * FROM tb_guru, tb_kelas WHERE id_guru='$id_guru' AND tb_guru.id_kelas=tb_kelas.id_kelas ");
 
     while ($d = mysqli_fetch_array($data)) {
 
@@ -63,13 +63,13 @@
                 <tr>
                     <td>Kelas</td>
                     <td>
-                        <select class="form-control" name="kode_kelas" required>
-                            <option value="<?php echo $d['kode_kelas'] ?>"> <?php echo $d['nama_kelas'] ?> Pilihan Awal</option>
+                        <select class="form-control" name="id_kelas" required>
+                            <option value="<?php echo $d['id_kelas'] ?>"> <?php echo $d['nama_kelas'] ?> Pilihan Awal</option>
                             <?php
                             $data1 = mysqli_query($koneksi, "select * from tb_kelas");
                             while ($d1 = mysqli_fetch_array($data1)) {
                             ?>
-                                <option value="<?php echo $d1['kode_kelas'] ?>"><?php echo $d1['nama_kelas'] ?></option>
+                                <option value="<?php echo $d1['id_kelas'] ?>"><?php echo $d1['nama_kelas'] ?></option>
                             <?php } ?>
                         </select>
                     </td>

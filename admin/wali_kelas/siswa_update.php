@@ -9,13 +9,13 @@ include '../../koneksi.php';
 $id_siswa = $_POST['id_siswa'];
 $nisn = $_POST['nisn'];
 $nama_siswa = $_POST['nama_siswa'];
-$kode_kelas = $_POST['kode_kelas'];
+$id_kelas = $_POST['id_kelas'];
 
 
 mysqli_query($koneksi, "UPDATE tb_siswa SET
              nisn='$nisn',
              nama_siswa='$nama_siswa',
-             kode_kelas='$kode_kelas'
+             id_kelas='$id_kelas'
              where id_siswa='$id_siswa'
              ");
 

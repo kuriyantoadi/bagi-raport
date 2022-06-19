@@ -95,7 +95,7 @@
     $data = mysqli_query($koneksi, "SELECT
       id_kelas,
       nama_kelas,
-      kode_kelas,
+      id_kelas,
       tingkat
       from tb_kelas ");
     while ($d = mysqli_fetch_array($data)) {
@@ -105,7 +105,7 @@
           <center><?php echo $no++ ?>
         </td>
         <td>
-          <center><?php echo $d['kode_kelas']; ?>
+          <center><?php echo $d['id_kelas']; ?>
         </td>
         <td>
           <center><?php echo $d['nama_kelas']; ?>
@@ -115,7 +115,7 @@
         </td>
         <td>
           <center>
-            <a type="button" class="btn btn-info btn-sm" href="siswa.php?kode_kelas=<?php echo $d['kode_kelas'] ?>">Lihat Siswa</a>
+            <a type="button" class="btn btn-info btn-sm" href="siswa.php?id_kelas=<?php echo $d['id_kelas'] ?>">Lihat Siswa</a>
         </td>
         <td>
           <center>

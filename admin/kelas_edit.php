@@ -33,7 +33,7 @@
         <tr>
           <td>Kode Kelas</td>
           <td>
-            <input type="text" class="form-control" name="kode_kelas" value="<?php echo $d['kode_kelas'] ?>">
+            <input type="text" class="form-control" name="id_kelas" value="<?php echo $d['id_kelas'] ?>">
           </td>
         </tr>
         <tr>

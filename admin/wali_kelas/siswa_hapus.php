@@ -9,7 +9,7 @@ if ($_SESSION['status'] != "wali" && $_SESSION['status'] != "admin") {
 
 } else {
     $id_siswa = $_GET['id_siswa'];
-    $kode_kelas = $_GET['kode_kelas'];
+    $id_kelas = $_GET['id_kelas'];
     // menghapus data dari database
     mysqli_query($koneksi, "delete from tb_siswa where id_siswa='$id_siswa' ");
 
