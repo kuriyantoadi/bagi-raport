@@ -38,7 +38,7 @@
       } elseif ($_GET['pesan'] == "hapus-berhasil") {
         echo "
               <div class='alert alert-info' role='alert'>
-                <center>Data Berhasil Dihapus 
+                <center>Data Berhasil Dihapus
               </div>
               ";
       } elseif ($_GET['pesan'] == "hapus-gagal") {
@@ -67,23 +67,15 @@
         <th>
           <center>No
         </th>
-        <th>
-          <center>Kode Kelas
-        </th>
+
         <th>
           <center>Nama Kelas
         </th>
         <th>
-          <center>Kelas
+          <center>Tingkat
         </th>
         <th>
-          <center>Lihat Siswa
-        </th>
-        <th>
-          <center>Edit
-        </th>
-        <th>
-          <center>Hapus
+          <center>Pilihan
         </th>
 
       </tr>
@@ -104,9 +96,7 @@
         <td>
           <center><?php echo $no++ ?>
         </td>
-        <td>
-          <center><?php echo $d['id_kelas']; ?>
-        </td>
+
         <td>
           <center><?php echo $d['nama_kelas']; ?>
         </td>
@@ -115,15 +105,10 @@
         </td>
         <td>
           <center>
-            <a type="button" class="btn btn-info btn-sm" href="siswa.php?id_kelas=<?php echo $d['id_kelas'] ?>">Lihat Siswa</a>
-        </td>
-        <td>
-          <center>
+            <a type="button" class="btn btn-danger btn-sm" href="kelas.php?id_kelas=<?php echo $d['id_kelas']; ?>&tingkat=<?php echo $d['tingkat'] ?>" href=
+              onclick="return confirm('Anda yakin Hapus data kelas <?php echo $d['nama_kelas']; ?> ?')">Hapus</a>
             <a type="button" class="btn btn-primary btn-sm" href="kelas_edit.php?id_kelas=<?php echo $d['id_kelas'] ?>">Edit</a>
-        </td>
-        <td>
-          <center>
-            <a type="button" class="btn btn-warning btn-sm" href="kelas_hapus.php?id_kelas=<?php echo $d['id_kelas']; ?>&tingkat=<?php echo $d['tingkat'] ?>" onclick="return confirm('Anda yakin Hapus data kelas <?php echo $d['nama_kelas']; ?> ?')">Hapus</a>
+            <a type="button" class="btn btn-info btn-sm" href="siswa.php?id_kelas=<?php echo $d['id_kelas'] ?>">Lihat Siswa</a>
         </td>
       </tr>
 
