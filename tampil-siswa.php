@@ -45,7 +45,7 @@ if ($_SESSION['status'] != "AKTIF") {
       include 'koneksi.php';
       $nisn = $_GET['nisn'];
       $no = 1;
-      $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas where nisn='$nisn' AND tb_siswa.kode_kelas=tb_kelas.kode_kelas ");
+      $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas where nisn='$nisn' AND tb_siswa.id_kelas=tb_kelas.id_kelas ");
       while ($d = mysqli_fetch_array($data)) {
       ?>
 
