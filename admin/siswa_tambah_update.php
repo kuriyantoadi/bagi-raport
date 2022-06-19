@@ -16,7 +16,7 @@ $password = md5($_POST['password']);
 $cek_tambah = mysqli_query($koneksi, "INSERT INTO tb_siswa Values('','$id_kelas','$nisn','$password','$nama_siswa','','AKTIF')");
 
 if ($cek_tambah) {
-    // header("location:siswa_daftar.php?pesan=tambah-berhasil");
+    header("location:siswa_daftar.php?pesan=tambah-berhasil");
 } else {
-    // header("location:siswa_daftar.php?pesan=tambah-gagal");
+    header("location:siswa_daftar.php?pesan=tambah-gagal");
 }
