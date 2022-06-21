@@ -19,14 +19,14 @@
     <form class="" action="kelas_tambah_update.php" method="post">
 
         <table class="table table-bordered">
-            <tr>
+            <!-- <tr>
                 <td>
                     Kode Kelas
                 </td>
                 <td>
                     <input type="text" class="form-control" name="id_kelas" value="" required>
                 </td>
-            </tr>
+            </tr> -->
             <tr>
                 <td>
                     Nama Kelas
