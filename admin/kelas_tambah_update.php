@@ -7,10 +7,7 @@ if ($_SESSION['status'] != "admin") {
 include '../koneksi.php';
 
 $nama_kelas = $_POST['nama_kelas'];
-// $id_kelas = $_POST['id_kelas'];
 $tingkat = $_POST['tingkat'];
-
-
 
 $cek_tambah =  mysqli_query($koneksi, "INSERT INTO tb_kelas Values('','$nama_kelas','$tingkat')");
 
