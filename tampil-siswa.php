@@ -1,49 +1,26 @@
-<?php
-session_start();
-if ($_SESSION['status'] != "AKTIF") {
-  header("location:index.php?pesan=belum_login");
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php'; ?>
 
-<head>
-  <title>Tampil dan Download Raport </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+<div class="row">
+  <div class="col-md-12">
+    <center>
+      <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN 2020/2021</b></h5>
+    </center>
+    <center>
+      <h5><b>SMKN 1 KRAGILAN</b></h5>
+    </center>
+    <center>
+      <h5><b>Download Raport</b></h5>
+    </center>
+    <br>
+    <!-- font ganti jenis -->
+  </div>
+</div>
 
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery-latest.js"></script>
-</head>
-
-<body>
-
-
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <center>
-          <h5 style="margin-top:  25px;"><b>TAHUN PELAJARAN 2020/2021</b></h5>
-        </center>
-        <center>
-          <h5><b>SMKN 1 KRAGILAN</b></h5>
-        </center>
-        <center>
-          <h5><b>Download Raport</b></h5>
-        </center>
-        <br>
-        <!-- font ganti jenis -->
-      </div>
-    </div>
-
-    <a style="margin-bottom: 20px;" type="button" class="btn btn-danger btn-sm" href="logout.php">Logout</a>
     <table class="table table-bordered table-hover" id="domainsTable">
 
       <?php
       include 'koneksi.php';
-      $nisn = $_GET['nisn'];
+      // $nisn = $_GET['nisn'];
       $no = 1;
       $data = mysqli_query($koneksi, "SELECT * from tb_siswa, tb_kelas where nisn='$nisn' AND tb_siswa.id_kelas=tb_kelas.id_kelas ");
       while ($d = mysqli_fetch_array($data)) {
