@@ -24,9 +24,10 @@ if ($_SESSION['status'] != "admin") {
 
 <body>
 
-<div class="container">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
     <a class="navbar-brand" href="index.php">Program Raport</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -51,5 +52,6 @@ if ($_SESSION['status'] != "admin") {
     <span class="navbar-text">
       <a href="logout.php">Logout</a>
     </span>
+  </div>
+
   </nav>
-</div>
